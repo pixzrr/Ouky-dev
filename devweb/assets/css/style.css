@@ -1,0 +1,469 @@
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(9, 9, 11);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+/*Header*/
+
+header{
+    background-color: rgba(9, 9, 10, 0.88);
+    backdrop-filter: blur(10px); /*Flou du bg*/
+    width: 100%;
+    height: 4em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /*Ombre*/
+    position: sticky; /*On peut mettre position fixed aussi (ca change un peu l'affichage)*/
+    top: 0%;
+    z-index: 5; /*Pour que le header soit au dessus de tout*/
+}
+
+
+
+
+header section{ /*boutton menu + logo*/
+    width: 15em; /*largeur de la nav*/
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+}
+
+header section img{ /*boutton*/
+    cursor: pointer; /*quand on passe notre souris sur l'image ca fait comme si c'était un a href*/
+    margin: 0 2.5em 0 1em;
+    margin-right: 2.75em;
+}
+
+header section a{ /*logo*/
+    color: white;
+    text-decoration: none;
+}
+
+header img{ /*boutton menu + autres potentielles images*/
+    width: 2em;
+    height: 2em;
+}
+
+
+
+
+header form{ /*barre de recherche*/
+    width: 50%;
+    position: relative;
+}
+
+@media screen and (max-width: 1200px){ /*responsive*/
+    header form{
+        width: 0%;
+        display: none;
+    }
+}
+
+header form input[type="search"]{ /*ajustements barre de recherche*/
+    width: 100%;
+    height: 2.75em;
+    border-radius: 1.5em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+
+    transition: all 0.4s ease-in-out;
+}
+
+header form input[type="search"]:hover{ /*petit agrandissement quand on passe la souris dessus*/
+    transform: scale(1.01);
+}
+
+header form input[type="search"]:focus{ /*changement de couleur + ombre quand on clique dessus*/
+    background-color: rgb(39, 39, 39);
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
+    transform: scale(1.01);
+}
+
+header form input[type="submit"]{ /*ajustements boutton rechercher*/
+    background: none;
+    border: none;
+    outline: none;
+    color: rgb(109, 109, 109);
+    position: absolute;
+    top : 30%;
+    right: 1.2em;
+
+    transition: all 0.4s ease-in-out;
+}
+
+header form input[type="search"]:focus + input[type="submit"]{ /*qund on clique sur la barre de recherche, le boutton rechercher devient plus clair*/
+    color: rgb(167, 167, 167);
+}
+
+
+
+
+header p{ /*boutton s'inscrire + boutton se connecter*/
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header p a{ /*boutton s'inscrire*/
+    background-color: rgb(255, 30, 30) ;
+    padding: 0.75em 1.75em 0.75em 1.75em;
+    border-radius: 5em;
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+header p a:first-of-type{ /*boutton se connecter*/
+    background-color: rgba(56, 56, 56, 0.158);
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+/*Nav*/
+
+nav{
+    backdrop-filter: blur(10px); /*Flou du bg*/
+    width: 15em;
+    max-width: 20%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /*Ombre*/
+    position: sticky; /*On peut mettre position fixed aussi (ca change un peu l'affichage)*/
+    top: 4em;
+}
+
+#burger{ /*Pour le toggle*/
+    width: 5em;
+}
+
+nav section{
+    width: 80%;
+    padding: 1em 0 1em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 1px solid grey ;
+}
+
+nav section article{
+    width: 85%;
+    display: flex;
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.5em 1em 0.5em 0.5em;
+    border-radius: 1.5em;
+}
+
+#burger section article{ /*Pour le toggle*/
+    justify-content: center;
+    margin: 0.5em 0 0.5em 0;
+    padding: 0.5em 0em 0.5em 0em;
+}
+
+nav section article:hover{
+    background-color: rgb(29, 29, 29);
+}
+
+nav section article img{
+    margin-right: 0.5em;
+}
+
+nav section article a{
+    color: white;
+    text-decoration: none;
+}
+
+#burger section article a{ /*Pour le toggle*/
+    display: none;
+}
+
+header section img:focus + nav section a{
+    display: none;
+    background-color: aqua;
+}
+
+
+
+
+
+
+
+/*Main*/
+
+main{
+    width: calc(100% - 15em); /*width de 100% moins la largeur du menu*/
+    border-top-left-radius: 1em ;
+    background-color: rgb(9, 9, 11);
+    z-index: 4;
+    overflow: hidden;
+}
+
+#burger_main{ /*Pour le toggle*/
+    width: calc(100% - 5em);
+}
+
+main article img{
+    width: 100%;
+    mask: linear-gradient(black, transparent);
+
+    position: sticky;
+    top: 0;
+
+    transition: all 5s ease-in-out;
+}
+
+main article img:hover{
+    transform: scale(1.025);
+}
+
+main article section{
+    width: 20%;
+    position: absolute;
+    top: 80%;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.644) ;
+}
+
+main article section p{
+    font-size: 1.1em;
+    color: rgba(51, 51, 51, 0.664);
+}
+
+#title{
+    margin: 1em 0 1em 0;
+}
+
+main article section a{
+    background-color: rgb(255, 30, 30) ;
+    padding: 0.5em 1.75em 0.5em 1.75em;
+    border-radius: 5em;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+
+
+
+
+
+
+/*Highlights*/
+
+h2{
+    width: 100%;
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    color: rgb(230, 0, 0);
+    margin: 0.5em 0 0em 0;
+}
+
+h3{
+    width: 100%;
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+    color: rgb(228, 228, 228);
+    margin: 1em 0 1em 0;
+}
+
+
+
+
+
+
+
+/*Formulaires*/
+
+main form{
+    width: 20em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+main form select{
+    width: 30%;
+    height: 2em;
+    border-radius: 1.5em;
+    border: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: auto;
+    padding-left: 15px;
+    margin-bottom: 1em;
+}
+
+main form input[type="text"]{
+    width: 100%;
+    height: 2em;
+    border-radius: 1.5em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+    margin-bottom: 1em;
+
+    transition: all 0.1s ease-in-out;
+}
+
+main form input[type="password"]:focus{
+    outline: solid;
+}
+
+main form input[type="password"]{
+    width: 100%;
+    height: 2em;
+    border-radius: 1.5em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+    margin-bottom: 1em;
+
+    transition: all 0.1s ease-in-out;
+}
+
+main form input[type="text"]:focus{
+    outline: solid;
+}
+
+main textarea {
+    width: 100%;
+    height: 10em;
+    border-radius: 1.5em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+    margin-bottom: 1em;
+
+    transition: all 0.1s ease-in-out;
+}
+
+main form input[type="file"]{
+    display: none;
+}
+
+main form label{
+    min-width: 70%;
+    max-width: 100%;
+    min-height: 3em;
+    max-height: fit-content;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background-color: rgb(24, 24, 27);
+    color: rgb(128, 128, 128);
+    padding: 8px 15px ;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+main form textarea:focus{
+    outline: solid;
+}
+
+main form img{
+    width: 100%;
+    margin: 2em 0 0.5em 0;
+}
+
+main form input[type="submit"]{
+    width: 50%;
+    height: 2em;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 0.5em;
+    padding-bottom: 2em;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+
+    transition: all 0.4s ease-in-out;
+}
+
+main form input[type="submit"]:hover{
+    background-color: rgb(172, 0, 0);
+    color: white;
+}
+
+
+
+
+
+
+
+/*Footer*/
+
+footer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 1em 1em 0 0;
+    color: rgb(255, 255, 255);
+    background-color: rgb(12, 12, 12);
+}
+
+footer section{
+    width: 50%;
+    height: 80%;
+}
+
+footer section p:first-of-type{
+    color: rgb(219, 0, 0);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+footer ul{
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer ul li a{
+    color: white;
+}
+
+footer p{
+    width: 100%;
+    margin: 1em 0 1em 0;
+    display: flex;
+    justify-content: center;
+}

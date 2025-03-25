@@ -1,0 +1,14 @@
+@media screen and (max-width: 1200px){
+    nav{
+        position: fixed;
+        opacity: 0;
+    }
+
+    main{
+        width: 100%;
+    }
+
+    #burger_main{
+        width: 100%;
+    }
+}
