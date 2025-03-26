@@ -71,13 +71,6 @@ header form{ /*barre de recherche*/
     position: relative;
 }
 
-@media screen and (max-width: 1200px){ /*responsive*/
-    header form{
-        width: 0%;
-        display: none;
-    }
-}
-
 header form input[type="search"]{ /*ajustements barre de recherche*/
     width: 100%;
     height: 2.75em;
@@ -158,7 +151,6 @@ nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /*Ombre*/
     position: sticky; /*On peut mettre position fixed aussi (ca change un peu l'affichage)*/
     top: 4em;
 
@@ -293,7 +285,7 @@ main article section a{
 /*Highlights*/
 
 h1{
-    background: linear-gradient(to right, red 60%, rgb(180, 180, 180));
+    background: linear-gradient(to right, red 60%, rgb(29, 29, 29));
     background-clip: text;
     color: transparent;
 }

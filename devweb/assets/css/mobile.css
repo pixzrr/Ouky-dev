@@ -1,14 +1,52 @@
 @media screen and (max-width: 1200px){
-    nav{
-        position: fixed;
-        opacity: 0;
+    header section{
+        width: 20%; /*largeur de la nav*/
     }
 
-    main{
+    header section img{
+        margin-right: 1.5em;
+    }
+
+    header p a{
+        padding: 0.5em
+    }
+
+    header form{
+        width: 0%;
+        display: none;
+    }
+
+    nav{
+        backdrop-filter: blur(10px); /*Flou du bg*/
+        width: 0%;
+        height: fit-content;
+        max-width: 100%;
+        z-index: 10;
+    }
+
+    #mobile_burger{ /*Pour le toggle*/
         width: 100%;
     }
 
-    #burger_main{
+    nav section article img{
+        display: none;
+    }
+
+    #mobile_burger section article img{
+        display: flex;
+        height: 1.5em;
+    }
+
+    nav section article a{
+        display: none;
+    }
+
+    #mobile_burger section article a{
+        display: flex;
+        font-size: 1.5em;
+    }
+
+    main{
         width: 100%;
     }
 }
