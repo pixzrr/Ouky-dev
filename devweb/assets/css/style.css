@@ -252,7 +252,7 @@ main{
 main article section{
     width: 20%;
     position: absolute;
-    top: 80%;
+    top: 30em;
     right: 10%;
     background-color: rgba(0, 0, 0, 0.644) ;
 }
@@ -350,6 +350,7 @@ main section article div{
     width: 13.5em;
     display: flex;
     justify-content: space-between;
+    margin: 0.15em 0 0.15em 0;
 }
 
 main section article div p:first-of-type{
@@ -359,10 +360,13 @@ main section article div p:first-of-type{
 main section article div p:last-of-type{
     width: fit-content;
     padding: 0.15em;
+
     margin-bottom: 0.5em;
     background-color:  rgb(34, 34, 34);
     color: rgb(207, 207, 207);
     box-shadow: 0 0 10px rgba(0, 0, 0, 2); /*Ombre*/
+    display: flex;
+    align-items: center;
 }
 
 
@@ -540,6 +544,13 @@ aside{
     margin-right: -30em;
 
     transition: all 0.5s ease-in-out;
+}
+
+aside #view_less{
+    height: 2em;
+    width: 10%;
+    object-fit:none;
+    cursor: pointer;
 }
 
 #aside{

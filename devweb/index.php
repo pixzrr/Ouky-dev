@@ -29,6 +29,7 @@ include 'assets/inc/top.php'; ?>
     </section>
 </main>
 <aside id="">
+    <img id="view_less" src="assets/images/x.png" alt="obligatoire">
     <img src="assets/images/suzume.jpeg" alt="obligatoire">
 
     <h2 id="titre">TITRE<h2>
