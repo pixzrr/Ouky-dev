@@ -6,31 +6,29 @@ include 'assets/inc/top.php'; ?>
         <img id="bannière" src="assets/images/classroom.webp" alt="assassination classroom">
         <section>
             <p>Date de sortie</p>
-            <p id="title">Titre</p>
-            <a href="source">Voir</a>
-            <p id ="type">Genre ou pas</p>
-            <p>Catégorie</p>
         </section>
     </article>
     
     <section>
         <!--Modèle de carte de film / série-->
         <article>
-            <a href="source">
-                <img src="assets/images/carrousel/img-2.jpg" alt="jsp mais faut remplir">
-            </a>
+            <div id="overflow">
+            <img src="assets/images/carrousel/img-2.jpg" alt="jsp mais faut remplir">
+            </div>
 
             <p>Date de sortie</p>
             <!--Police spéciale à prévoir pour le titre-->
-            <p>Titre</p>
+            <p id="card_title">Titre</p>
             <!--Jsp si on met le genre (drame, thriller, etc) ou la note du film ou de la série-->
-            <p>Genre ou pas</p>
-            <!--Catégorie : film ou série?-->
-            <p>Catégorie</p>
+            <div>
+                <p id="card_genre">Genre ou pas</p>
+                <!--Catégorie : film ou série?-->
+                <p>Catégorie</p>
+            </div>
         </article>
     </section>
 </main>
-<aside>
+<aside id="">
     <img src="assets/images/suzume.jpeg" alt="obligatoire">
 
     <h2 id="titre">TITRE<h2>

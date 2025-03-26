@@ -177,7 +177,7 @@ nav section article{
     padding: 0.5em 1em 0.5em 0.5em;
     border-radius: 1em;
 
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #burger section article{ /*Pour le toggle*/
@@ -185,7 +185,7 @@ nav section article{
     margin: 0.5em 0 0.5em 0;
     padding: 0.5em 0em 0.5em 0em;
 
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 nav section article:hover{
@@ -276,12 +276,94 @@ main article section a{
     margin-right: 1em;
 }
 
-/*Highlights*/
+/*Cartes*/
 
-main section article img{
-    width: 10em;
+main section{
+    height: 25em;
+    width: 100%;
+    display: flex;
 }
 
+main section article{
+    width: 15em;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#overflow{
+    width: 13.5em;
+    height: 18em;
+    border-radius: 0.75em;
+    margin-top: 0.5em;
+    overflow: hidden;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#overflow:hover{
+    opacity: 0.5;
+}
+
+main section article img{
+    width: 13.5em;
+    height: 18em;
+    object-fit: cover;
+    border-radius: 0.75em;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#overflow img:hover{
+    transform: scale(1.05);
+}
+
+main section article p{
+    color: white;
+    width: 13.5em;
+}
+
+
+#card_title{
+    font-size: 1.1em;
+    margin-left: 1.1em;
+}
+
+main section article div {
+    width: 100%;
+}
+
+#card_genre{
+    color: rgb(201, 201, 201);
+}
+
+main section article p:first-of-type{
+    color: rgba(118, 118, 120);
+    margin-top: 0.25em;
+    text-align: center;
+}
+
+main section article div{
+    width: 13.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+main section article div p:first-of-type{
+    width: fit-content;
+}
+
+main section article div p:last-of-type{
+    width: fit-content;
+    padding: 0.15em;
+    margin-bottom: 0.5em;
+    background-color:  rgb(34, 34, 34);
+    color: rgb(207, 207, 207);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2); /*Ombre*/
+}
 
 
 
@@ -445,16 +527,23 @@ main form input[type="submit"]:hover{
 
 
 
-/*Footer*/
+/*Aside*/
 
 aside{
-    width: 20%;
+    width: 30em;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.744);
     position:fixed;
+    top:4em;
     right:0;
     z-index: 5;
-    top:4em ;
+    margin-right: -30em;
+
+    transition: all 0.5s ease-in-out;
+}
+
+#aside{
+    margin-right: 0;
 }
 
 aside img{
