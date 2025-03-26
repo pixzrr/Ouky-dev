@@ -1,4 +1,4 @@
-        <footer>
+        <footer id="">
             <section>
                 <p>Ouky</p>
                 <p>Ouky est une plateforme de divertissement en straming. Regardez vos films et séries préférées sans interrutption.</p>

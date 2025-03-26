@@ -45,6 +45,12 @@ header section img{ /*boutton*/
     cursor: pointer; /*quand on passe notre souris sur l'image ca fait comme si c'était un a href*/
     margin: 0 2.5em 0 1em;
     margin-right: 2.75em;
+
+    transition: all 0.3s ease-in-out;
+}
+
+header section img:hover{
+    rotate: 90deg;
 }
 
 header section a{ /*logo*/
@@ -155,10 +161,12 @@ nav{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /*Ombre*/
     position: sticky; /*On peut mettre position fixed aussi (ca change un peu l'affichage)*/
     top: 4em;
+
+    transition: all 0.3s ease-in-out;
 }
 
 #burger{ /*Pour le toggle*/
-    width: 5em;
+    width: 4em;
 }
 
 nav section{
@@ -175,21 +183,33 @@ nav section article{
     display: flex;
     margin: 0.5em 0 0.5em 0;
     padding: 0.5em 1em 0.5em 0.5em;
-    border-radius: 1.5em;
+    border-radius: 1em;
+
+    transition: all 0.5s ease-in-out;
 }
 
 #burger section article{ /*Pour le toggle*/
     justify-content: center;
     margin: 0.5em 0 0.5em 0;
     padding: 0.5em 0em 0.5em 0em;
+
+    transition: all 0.5s ease-in-out;
 }
 
 nav section article:hover{
     background-color: rgb(29, 29, 29);
 }
 
+#burger section article:hover{ /*Pour le toggle*/
+    margin-left: 0.5em;
+}
+
 nav section article img{
     margin-right: 0.5em;
+}
+
+#burger section article img{
+    margin-right: 0;
 }
 
 nav section article a{
@@ -199,11 +219,6 @@ nav section article a{
 
 #burger section article a{ /*Pour le toggle*/
     display: none;
-}
-
-header section img:focus + nav section a{
-    display: none;
-    background-color: aqua;
 }
 
 
@@ -220,6 +235,8 @@ main{
     background-color: rgb(9, 9, 11);
     z-index: 4;
     overflow: hidden;
+
+    transition: all 0.3s ease-in-out;
 }
 
 #burger_main{ /*Pour le toggle*/
@@ -274,6 +291,12 @@ main article section a{
 
 
 /*Highlights*/
+
+h1{
+    background: linear-gradient(to right, red 60%, rgb(180, 180, 180));
+    background-clip: text;
+    color: transparent;
+}
 
 h2{
     width: 100%;
@@ -430,7 +453,7 @@ footer{
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     flex-wrap: wrap;
     border-radius: 1em 1em 0 0;
@@ -438,9 +461,19 @@ footer{
     background-color: rgb(12, 12, 12);
 }
 
+#burger_footer{
+    justify-content: center;
+}
+
 footer section{
-    width: 50%;
+    width: 30%;
     height: 80%;
+
+    transition: all 0.3s ease-in-out;
+}
+
+#burger_footer section{
+    width: 35%;
 }
 
 footer section p:first-of-type{
