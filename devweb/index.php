@@ -3,7 +3,7 @@ include 'assets/inc/top.php'; ?>
 <main id="">
     <!--Bannière-->
     <article>
-        <img src="assets/images/classroom.webp" alt="assassination classroom">
+        <img id="bannière" src="assets/images/classroom.webp" alt="assassination classroom">
         <section>
             <p>Date de sortie</p>
             <p id="title">Titre</p>
@@ -17,7 +17,7 @@ include 'assets/inc/top.php'; ?>
         <!--Modèle de carte de film / série-->
         <article>
             <a href="source">
-                <img src="assets/images/carrousel/img-1.jpg" alt="jsp mais faut remplir">
+                <img src="assets/images/carrousel/img-2.jpg" alt="jsp mais faut remplir">
             </a>
 
             <p>Date de sortie</p>
@@ -30,4 +30,10 @@ include 'assets/inc/top.php'; ?>
         </article>
     </section>
 </main>
+<aside>
+    <img src="assets/images/suzume.jpeg" alt="obligatoire">
+
+    <h2 id="titre">TITRE<h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae placeat architecto, sequi eligendi itaque exercitationem aperiam nulla doloribus cupiditate nisi ut non quae, saepe, consectetur dolorum! Placeat repellendus culpa hic?</p>
+</aside>
 <?php include 'assets/inc/bottom.php'; ?>

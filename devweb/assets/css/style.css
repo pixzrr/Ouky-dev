@@ -235,7 +235,7 @@ main{
     width: calc(100% - 5em);
 }
 
-main article img{
+#bannière{
     width: 100%;
     mask: linear-gradient(black, transparent);
 
@@ -245,7 +245,7 @@ main article img{
     transition: all 5s ease-in-out;
 }
 
-main article img:hover{
+#bannière:hover{
     transform: scale(1.025);
 }
 
@@ -274,6 +274,12 @@ main article section a{
     color: rgb(0, 0, 0);
     text-decoration: none;
     margin-right: 1em;
+}
+
+/*Highlights*/
+
+main section article img{
+    width: 10em;
 }
 
 
@@ -431,6 +437,43 @@ main form input[type="submit"]{
 main form input[type="submit"]:hover{
     background-color: rgb(172, 0, 0);
     color: white;
+}
+
+
+
+
+
+
+
+/*Footer*/
+
+aside{
+    width: 20%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.744);
+    position:fixed;
+    right:0;
+    z-index: 5;
+    top:4em ;
+}
+
+aside img{
+    width : 90%;
+    margin:3%
+}
+
+aside p,h2{
+    color: white;
+    padding:2px;
+    margin-top: 3%;
+}
+#titre{
+    border-bottom: 1px solid rgb(255, 254, 254) ;
+    border-top: 1px solid rgb(255, 254, 254) ;
+}
+
+aside p{
+    font-size: 12px;
 }
 
 

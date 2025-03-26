@@ -22,6 +22,7 @@
         height: fit-content;
         max-width: 100%;
         z-index: 10;
+        position: fixed;
     }
 
     #mobile_burger{ /*Pour le toggle*/

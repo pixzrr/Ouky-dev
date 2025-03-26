@@ -6,7 +6,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['c_
     $user = htmlspecialchars($_POST['username']);
     $pass = htmlspecialchars($_POST['password']);
 
-    include '../inc/database.php';
+    include '../../inc/database.php';
 
     // Vérifier si le pseudo existe déjà
     $sql_check = 'SELECT username FROM user WHERE username LIKE "%'.$user.'%";';
@@ -39,9 +39,9 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['c_
             // session cookie
             $_SESSION['user'] = $user;
             $_SESSION['pass'] = $pass;
-            header("location:../../index.php");
+            header("location:../../../index.php");
         } else {
-            header("location:../pages/erreur.php");
+            header("location:../../erreur.php");
         }
 
     }
