@@ -38,11 +38,11 @@
         height: 1.5em;
     }
 
-    nav section article a{
+    nav section article p{
         display: none;
     }
 
-    #mobile_burger section article a{
+    #mobile_burger section article p{
         display: flex;
         font-size: 1.5em;
     }
@@ -111,5 +111,17 @@
 
     #mobile_aside{
         margin-right: 0;
+    }
+
+    footer{
+        justify-content: center;
+    }
+
+    footer section{
+        width: 90%;
+    }
+
+    footer ul{
+        width: 100%;
     }
 }
