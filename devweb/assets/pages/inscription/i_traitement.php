@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['c_password'])){
     if($_POST['password'] == $_POST['c_password']){
 
@@ -11,44 +12,32 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['c_
     // Vérifier si le pseudo existe déjà
     $sql_check = 'SELECT username FROM user WHERE username LIKE "%'.$user.'%";';
     $check = $connexion->query($sql_check);
-    $user_exists = $check->fetchColumn(); // Lire la colone username
+    $user_exists = $check->fetch(); // récupère les données de la requête
 
     if ($user_exists > 0) { //moi j'aurais mis diferent de zero et pas supèrieur a zero
-        echo "Ce nom d'utilisateur est déjà pris. Veuillez en choisir un autre.";
+        $_SESSION['inscription_error'] = "Ce nom d'utilisateur est déjà pris. Veuillez en choisir un autre.";
+        header("location:inscription.php");
     } else {
 
     // Requête
 
     $sql = "INSERT INTO user (username, password) VALUES ('$user', '$pass');";
 
-    $connexion -> query($sql);
-
     //nTest d'ajout
 
-    $sql_vu = 'SELECT username FROM user WHERE username LIKE "%'.$user.'%";';
-    $sql_vp = 'SELECT password FROM user WHERE password LIKE "%'.$pass.'%";';
-
-    $v_user = $connexion -> query($sql_vu);
-    $v_pass = $connexion -> query($sql_vp);
-
-    $ru = $v_user->fetch();
-    $rp = $v_pass->fetch();
-
-        if ($ru['username'] === $user && $rp['password'] === $pass){
-
-            // session cookie
-            $_SESSION['user'] = $user;
-            $_SESSION['pass'] = $pass;
+        if($connexion -> query($sql)){
             header("location:../../../index.php");
         } else {
-            header("location:../../erreur.php");
+            header("location:../erreur.php");
         }
 
     }
     } else {
-        echo "mdp ne correspondent pas";
+        $_SESSION['inscription_error'] = "Les mots de passe ne correspondent pas.";
+        header("location:inscription.php");
     }
 } else {
-    echo "veullez renseigner tous les champs";
+    $_SESSION['inscription_error'] = "Veuillez renseigner tous les champs.";
+    header("location:inscription.php");
 }
 ?>

@@ -26,10 +26,27 @@ define("ROOT", "/devweb/");
                 <input type="search" name="search" placeholder="Rechercher film ou série...">
                 <input type="submit" value="Rechercher">
             </form>
+            <?php
+            if (!empty($_SESSION['admin'])) {
+                ?>
+                <div class="profile">
+                    <a href="<?= ROOT ?>assets/pages/admin/admin_panel.php"><img src="<?= ROOT ?>assets/images/shield-user.png" alt="admin panel"></a>
+                </div>
+                <?php
+            } else if (!empty($_SESSION['user']) && !empty($_SESSION['pass'])) {
+                ?>
+                <div class="profile">
+                    <a href="<?= ROOT ?>/assets/pages/user/profil.php"><img src="<?= ROOT ?>assets/images/circle-user.png" alt="profil"></a>
+                </div>
+                <?php
+            } else {
+                ?>
             <p>
-                <a href="<?= ROOT ?>assets/pages/connexion/connexion.php">Se connecter</a>
-                <a href="<?= ROOT ?>assets/pages/inscription/inscription.php">S'inscrire</a>
-            </p>
+            <a href="<?= ROOT ?>assets/pages/connexion/connexion.php">Se connecter</a>
+            <a href="<?= ROOT ?>assets/pages/inscription/inscription.php">S'inscrire</a>
+            </p><?php
+            }
+            ?>
         </header>
         <nav id="">
             <!--Pour tous-->

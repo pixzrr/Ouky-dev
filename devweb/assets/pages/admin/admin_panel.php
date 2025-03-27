@@ -3,7 +3,7 @@
     <h2>Admin pannel</h2> 
     <h3>Ne partagez pas votre mot de passe aux tiers.</h3>
 
-    <a class="deconexion" href="../pages/s_destroy.php">Se déconnecter</a>
+    <a class="deconexion" href="../deconnexion.php">Se déconnecter</a>
 
 
     <table>
@@ -13,6 +13,7 @@
                 <th>ID</th>
                 <th>Nom</th>
                 <th>Prénom</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +33,12 @@
                 <td><?= $r['id'] ?></td>
                 <td><?= $r['username'] ?></td>
                 <td><?= $r['password'] ?></td>
+                <td>
+                    <form action="user_sup.php" method="post">
+                        <input type="hidden" name="id" value="<?= $r['id']?>">
+                        <input type="image" src="../../images/x.png" alt="supprimer">
+                    </form> 
+                </td>
             </tr>
 
 
@@ -40,7 +47,7 @@
     </table>
 
     <h3>Ajouter du contenu</h3>
-    <form action="../pages/content_add.php" method="post" enctype="multipart/form-data">
+    <form action="content_add.php" method="post" enctype="multipart/form-data">
         <select name="type">
             <option selected disabled>Type</option>
             <option value="movie">Film</option>
@@ -53,29 +60,17 @@
         <input type="text" name="author" placeholder="Auteur" maxlength="100">
         <textarea name="synopsis" placeholder="Synopsis" maxlength="2000"></textarea>
 
+        <!--id file pour le js-->
         <input type="file" name="logo" accept="image/*" id="file">
         <label for="file">Logo 1920x1080
 
-        <img id="preview" src="" alt="Aperçu de l'image" style="display: none;">
+        <img id="preview" src="" alt="">
         
         </label>
 
         <input type="submit" value="   Ajouter   ">
 
-        <script>
-    document.getElementById('file').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const img = document.getElementById('preview');
-            img.src = e.target.result;
-            img.style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-    }
-    });
-    </script>
+        <script type="text/JavaScript" src="../../scripts/file_preview.js"></script>
     </form>
 
 </main>

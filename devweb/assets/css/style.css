@@ -138,6 +138,32 @@ header p a:first-of-type{ /*boutton se connecter*/
 
 
 
+header .profile{ /*boutton profil*/
+    width: 10em;
+    display: flex;
+    justify-content: flex-end;
+
+    transition: all 0.3s ease-in-out;
+}
+
+header .profile img{
+    transition: all 0.3s ease-in-out;
+}
+
+header .profile img:hover{ /*boutton profil*/
+background-color: rgb(53, 53, 53);
+transform: scale(1.05);
+}
+
+header .profile img{
+    margin-right: 1em;
+    padding: 0.3em;
+    border-radius: 50%;
+}
+
+
+
+
 
 
 
@@ -409,7 +435,8 @@ h3{
 /*Formulaires*/
 
 main form{
-    width: 20em;
+    width: 25em;
+    max-width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -531,12 +558,51 @@ main form input[type="submit"]:hover{
 
 
 
+
+
+/*Admin pannel*/
+
+main table{
+    width: 90%;
+    color: rgb(204, 204, 204);
+    margin-bottom: 2em;
+    table-layout: fixed; /*permet de modifier les largeurs de la table comme bon nous semble*/
+    margin: auto;
+}
+
+main th{
+    font-size: 1.2em;
+    padding-bottom: 1.5em;
+}
+
+main th:first-of-type, th:last-of-type{
+    width: 10%;
+}
+
+main td{
+    border-top: 1px solid rgb(27, 27, 27);
+    padding: 4px 10px;
+    text-align: center;
+}
+
+main table form input[type='image']{
+    width: 2em;
+
+}
+
+
+
+
+
+
+
 /*Aside*/
 
 aside{
     width: 30em;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.744);
+    backdrop-filter: blur(10px); /*Flou du bg*/
     position:fixed;
     top:4em;
     right:0;
@@ -594,10 +660,6 @@ footer{
     border-radius: 1em 1em 0 0;
     color: rgb(255, 255, 255);
     background-color: rgb(12, 12, 12);
-}
-
-#burger_footer{
-    justify-content: center;
 }
 
 footer section{

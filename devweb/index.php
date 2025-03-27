@@ -35,4 +35,5 @@ include 'assets/inc/top.php'; ?>
     <h2 id="titre">TITRE<h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae placeat architecto, sequi eligendi itaque exercitationem aperiam nulla doloribus cupiditate nisi ut non quae, saepe, consectetur dolorum! Placeat repellendus culpa hic?</p>
 </aside>
+<script type="text/JavaScript" src="<?= ROOT ?>assets/scripts/aside.js"></script>
 <?php include 'assets/inc/bottom.php'; ?>

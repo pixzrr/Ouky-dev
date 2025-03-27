@@ -27,7 +27,11 @@ if(!empty($_POST['username']) && !empty($_POST['password'])){
             $_SESSION['pass'] = $pass;
             header("location:../../../index.php");
         } else {
-            header("location:../../pages/erreur.php");
+            echo 'caca';
+            $_SESSION['connexion_error'] = "Login ou mot de passe incorrect.";
+            header("location:connexion.php");
         }
     }
+} else {
+    echo 'veuillez rensigner tous les champs';
 }

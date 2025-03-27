@@ -1,6 +1,6 @@
 let toggle = document.querySelector('nav');
-let main = document.querySelector('main');
-let footer = document.querySelector('footer');
+let bmain = document.querySelector('main');
+let bfooter = document.querySelector('footer');
 
 // Condition trouvée sur reddit : si la largeur de l'écran est inférieure à 1200px...
 if(screen.width < 1200){
@@ -11,30 +11,30 @@ if(screen.width < 1200){
     boutton.addEventListener('click', function(){
         if(toggle.getAttribute('id') != 'mobile_burger'){
             toggle.setAttribute('id', 'mobile_burger');
-            main.setAttribute('id', 'mobile_burger_main');
+            bmain.setAttribute('id', 'mobile_burger_main');
         } else {
             toggle.setAttribute('id', '');
-            main.setAttribute('id', '');
+            bmain.setAttribute('id', '');
         }
     });
 
 } else {
 
-if(main.getAttribute('id') == 'wideview'){
+if(bmain.getAttribute('id') == 'wideview'){
     toggle.setAttribute('id', 'burger');
-    main.setAttribute('id', 'burger_main');
-    footer.setAttribute('id', 'burger_footer');
+    bmain.setAttribute('id', 'burger_main');
+    bfooter.setAttribute('id', 'burger_footer');
 }
 
 boutton.addEventListener('click', function(){
     if(toggle.getAttribute('id') != 'burger'){
         toggle.setAttribute('id', 'burger');
-        main.setAttribute('id', 'burger_main');
-        footer.setAttribute('id', 'burger_footer');
+        bmain.setAttribute('id', 'burger_main');
+        bfooter.setAttribute('id', 'burger_footer');
     } else {
         toggle.setAttribute('id', '');
-        main.setAttribute('id', '');
-        footer.setAttribute('id', '');
+        bmain.setAttribute('id', '');
+        bfooter.setAttribute('id', '');
     }
 });
 }

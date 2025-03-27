@@ -22,6 +22,10 @@ if(screen.width < 1200){
         more.setAttribute('id', '');
     });
 
+    view_less.addEventListener('click', function(){
+        more.setAttribute('id', '');
+    });
+
 overflow.addEventListener('click', function(){
     if(more.getAttribute('id') != 'aside'){
         more.setAttribute('id', 'aside');
