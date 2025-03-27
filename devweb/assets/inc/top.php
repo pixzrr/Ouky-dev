@@ -36,7 +36,7 @@ define("ROOT", "/devweb/");
             } else if (!empty($_SESSION['user']) && !empty($_SESSION['pass'])) {
                 ?>
                 <div class="profile">
-                    <a href="<?= ROOT ?>/assets/pages/user/profil.php"><img src="<?= ROOT ?>assets/images/circle-user.png" alt="profil"></a>
+                    <a href="<?= ROOT ?>/assets/pages/user/profil.php"><img src="<?= ROOT ?>assets/images/user-round.png" alt="profil"></a>
                 </div>
                 <?php
             } else {
@@ -49,58 +49,92 @@ define("ROOT", "/devweb/");
             ?>
         </header>
         <nav id="">
+        <section id="mobile_search">
+                <article>
+                    <form action="<?= ROOT ?>assets/pages/mobile_recherche.php" method="get">
+                        <input type="image" src="<?= ROOT ?>assets/images/search.png" alt="barre de recherche" id="loupe">
+                        <label for="loupe">Rechercher</label>
+                    </form>
+                </article>
+            </section>
             <!--Pour tous-->
             <section>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Films</a>
-                </article>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Séries</a>
-                </article>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Pour vous</a>
-                </article>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Derniers ajouts</a>
-                </article>
+                <a href="<?= ROOT ?>index.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/house.png" alt="Accueil">
+                        <p>Accueil</p>
+                    </article>
+                </a>
+                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <p>Films</p>
+                    </article>
+                </a>
+                <a href="<?= ROOT ?>assets/pages/tous/series.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/film.png" alt="voir toutes les séries">
+                        <p>Séries</p>
+                    </article>
+                </a>
+                <a href="<?= ROOT ?>assets/pages/tous/derniers_ajouts.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/copy-plus.png" alt="voir les derniers ajouts">
+                        <p>Derniers ajouts</p>
+                    </article>
+                </a>
             </section>
 
             <!--User connecté-->
             <section>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Profil</a>
-                </article>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Suggérer</a>
-                </article>
+                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <p>Profil</p>
+                    </article>
+                </a>
+                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <p>Pour vous</p>
+                    </article>
+                </a>
+                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <p>Suggérer</p>
+                    </article>
+                </a>
             </section>
 
             <!--Pour tous-->
             <section>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Annonces</a>
-                </article>
+                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <p>Annonces</p>
+                    </article>
+                </a>
             </section>
 
             <section>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">À propos</a>
-                </article>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Mentions légales</a>
-                </article>
-                <article>
-                    <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
-                    <a href="<?= ROOT ?>assets/pages/connexion.php">Confidentialité</a>
-                </article>
+                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <p>À propos</p>
+                    </article>
+                </a>
+                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <p>Mentions légales</p>
+                    </article>
+                </a>
+                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                    <article>
+                        <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
+                        <p>Confidentialité</p>
+                    </article>
+                </a>
             </section>
         </nav>

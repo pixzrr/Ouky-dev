@@ -3,7 +3,9 @@
     <h2>Admin pannel</h2> 
     <h3>Ne partagez pas votre mot de passe aux tiers.</h3>
 
-    <a class="deconexion" href="../deconnexion.php">Se déconnecter</a>
+    <div class="deconnexion">
+        <a href="../deconnexion.php">Se déconnecter</a>
+    </div>
 
 
     <table>
@@ -19,14 +21,11 @@
         <tbody>
 
         <?php
-        // je me connecte à la DB
         include '../../inc/database.php';
 
-        // je lis tout
         $sql_user_list = "SELECT * FROM user";
         $reponse = $connexion->query($sql_user_list);
 
-        // j'affiche avec une boucle
         foreach($reponse AS $r): ?>
 
             <tr>
@@ -35,6 +34,46 @@
                 <td><?= $r['password'] ?></td>
                 <td>
                     <form action="user_sup.php" method="post">
+                        <input type="hidden" name="id" value="<?= $r['id']?>">
+                        <input type="image" src="../../images/x.png" alt="supprimer">
+                    </form> 
+                </td>
+            </tr>
+
+
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+
+    <table>
+        <caption><h3>Liste des oeuvres</h3></caption>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Type</th>
+                <th>Logo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+        <?php
+        $sql_catalogue_list = "SELECT * FROM catalogue";
+        $reponse = $connexion->query($sql_catalogue_list);
+
+
+        foreach($reponse AS $r): ?>
+
+
+            <tr>
+                <td><?= $r['id'] ?></td>
+                <td><?= $r['nom'] ?></td>
+                <td><?= $r['type'] ?></td>
+                <td><img src="../../images/<?= $r['logo'] ?>"></td>
+                <td>
+                    <form action="content_sup.php" method="post">
                         <input type="hidden" name="id" value="<?= $r['id']?>">
                         <input type="image" src="../../images/x.png" alt="supprimer">
                     </form> 

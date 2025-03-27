@@ -26,6 +26,10 @@ if(!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['c_
     //nTest d'ajout
 
         if($connexion -> query($sql)){
+
+            $_SESSION['user'] = $user;
+            $_SESSION['pass'] = $pass;
+            
             header("location:../../../index.php");
         } else {
             header("location:../erreur.php");
