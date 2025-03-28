@@ -1,22 +1,29 @@
-<?php include '../../inc/top.php'; ?>
+<?php include '../../inc/top.php';
+    $sql_filtre = 'SELECT * FROM catalogue WHERE type="serie";';
+    include '../../inc/database.php';
+    $serie = $connexion->query($sql_filtre);
+?>
 <main>
     <h2>Toutes les séries :</h2>
     <section id="all_content">
-        <article>
-            <div id="overflow">
-            <img src="../../images/carrousel/img-2.jpg" alt="jsp mais faut remplir">
-            </div>
+    <?php
+        foreach($serie AS $s):
+        ?>
 
-            <p>Date de sortie</p>
-            <!--Police spéciale à prévoir pour le titre-->
-            <p id="card_title">Titre</p>
-            <!--Jsp si on met le genre (drame, thriller, etc) ou la note du film ou de la série-->
+        <article>
+        <div id="overflow">
+            <img src="../../../uploads/<?= $s['logo'] ?>" alt="<?= $s['nom'] ?>">
+            </div>
+            <p><?= $s['year'] ?></p>
+            <p><?= $s['nom'] ?></p>
+
             <div>
-                <p id="card_genre">Genre ou pas</p>
+                <p id="card_genre">thriller</p>
                 <!--Catégorie : film ou série?-->
-                <p>Catégorie</p>
+                <p><?= $s['type'] ?></p>
             </div>
         </article>
+        <?php endforeach; ?>
 </section>
 </main>
 <aside id="">

@@ -16,14 +16,14 @@ include 'assets/inc/top.php'; ?>
             <img src="assets/images/carrousel/img-2.jpg" alt="jsp mais faut remplir">
             </div>
 
-            <p>Date de sortie</p>
+            <p>2025</p>
             <!--Police spéciale à prévoir pour le titre-->
             <p id="card_title">Titre</p>
             <!--Jsp si on met le genre (drame, thriller, etc) ou la note du film ou de la série-->
             <div>
-                <p id="card_genre">Genre ou pas</p>
+                <p id="card_genre">thriller</p>
                 <!--Catégorie : film ou série?-->
-                <p>Catégorie</p>
+                <p>serie</p>
             </div>
         </article>
     </section>

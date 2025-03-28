@@ -86,6 +86,8 @@ define("ROOT", "/devweb/");
             </section>
 
             <!--User connecté-->
+            <?php
+            if (!empty($_SESSION['user']) && !empty($_SESSION['pass'])) { ?>
             <section>
                 <a href="<?= ROOT ?>assets/pages/tous/films.php">
                     <article>
@@ -106,6 +108,7 @@ define("ROOT", "/devweb/");
                     </article>
                 </a>
             </section>
+            <?php } ?>
 
             <!--Pour tous-->
             <section>

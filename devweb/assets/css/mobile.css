@@ -56,6 +56,44 @@
         width: 100%;
     }
 
+    /*Cartes*/
+
+    main section{
+        height: fit-content;
+        justify-content: space-evenly;
+    }
+
+    main section article{
+        width: 11em;
+    }
+
+    #overflow{
+        width: 9.5em;
+        height: 14em;
+    }
+
+    main section article img{
+        width: 9.5em;
+        height: 14em;
+    }
+
+    main section article p{
+        width: 9.5em;
+        font-size: 1em;
+    }
+
+    #card_title{
+        margin-left: 1.1em;
+    }
+
+    #card_genre{
+        font-size: 0.8em;
+    }
+
+    main section article div{
+        width: 9.5em;
+    }
+
     /*Barre de recheche pour mobile*/
 
     main form{ /*barre de recherche*/

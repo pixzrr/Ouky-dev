@@ -1,22 +1,30 @@
-<?php include '../../inc/top.php'; ?>
+<?php include '../../inc/top.php';
+    $sql_filtre = 'SELECT * FROM catalogue ORDER BY id DESC;';
+    include '../../inc/database.php';
+    $last = $connexion->query($sql_filtre);
+?>
 <main>
     <h2>Derniers ajouts :</h2>
     <section id="all_content">
-        <article>
-            <div id="overflow">
-            <img src="../../images/carrousel/img-2.jpg" alt="jsp mais faut remplir">
-            </div>
+    <?php
+        foreach($last AS $l):
+        ?>
 
-            <p>Date de sortie</p>
-            <!--Police spéciale à prévoir pour le titre-->
-            <p id="card_title">Titre</p>
-            <!--Jsp si on met le genre (drame, thriller, etc) ou la note du film ou de la série-->
+        <article>
+        <div id="overflow">
+            <img src="../../../uploads/<?= $l['logo'] ?>" alt="<?= $l['nom'] ?>">
+            </div>
+            <p><?= $l['year'] ?></p>
+            <p><?= $l['nom'] ?></p>
+
             <div>
-                <p id="card_genre">Genre ou pas</p>
+                <p id="card_genre">thriller</p>
                 <!--Catégorie : film ou série?-->
-                <p>Catégorie</p>
+                <p><?= $l['type'] ?></p>
+            </div>
             </div>
         </article>
+        <?php endforeach; ?>
 </section>
 </main>
 <aside id="">

@@ -3,6 +3,8 @@
     <?php echo "<h2>Bienvenue ".$_SESSION['user']."</h2>"; ?>
     <h3>Mes informations :</h3>
 
-    <a class="deconnexion" href="../deconnexion.php">Se déconnecter</a>
+    <div class="deconnexion">
+        <a href="../deconnexion.php">Se déconnecter</a>
+    </div>
 </main>
 <?php include '../../inc/bottom.php'; ?>
