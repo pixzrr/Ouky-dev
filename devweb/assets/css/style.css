@@ -600,6 +600,10 @@ main td{
     text-align: center;
 }
 
+main td img{
+    width: 50%;
+}
+
 main table form input[type='image']{
     width: 2em;
 

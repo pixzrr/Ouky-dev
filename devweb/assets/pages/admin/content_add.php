@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(!empty($_POST['type']) && !empty($_POST['nom']) && !empty($_POST['year']) && !empty($_POST['author']) && !empty($_POST['synopsis']) && !empty($_FILES['logo']['tmp_name'])){
 
     $name = htmlspecialchars($_POST['nom']);
@@ -18,19 +19,22 @@ if(!empty($_POST['type']) && !empty($_POST['nom']) && !empty($_POST['year']) && 
 
         if($connexion->query($sql)){
             // on déplace l'image dans le dossier image
-            $target_directory = '\www\devweb\data\images';
+            $target_directory = '../../../uploads/';
             $target_path = $target_directory . $new_image;
-            echo "caca";
             // on vérifie si le déplacement a été fait
-            if (!move_uploaded_file($_FILES['logo']['name'], $target_path)){
-                echo $target_path;
-                echo "<br>";
-                print_r($_FILES);
+            if (!move_uploaded_file($_FILES['logo']['tmp_name'], $target_path)){
+                $_SESSION['upload_failed'] = "Echec de l'envoi du fichier";
+                header('location:admin_panel.php');
+            } else {
+                header('location:admin_panel.php');
             }
         } else {
+            $_SESSION['upload_failed'] = "Echec de la connexion à la base de données";
+            header('location:admin_panel.php');
         }
 
 } else {
-    echo "veullez renseigner tous les champs";
+    $_SESSION['upload_failed'] = "Veuillez renseigner tous les champs du formulaire";
+    header('location:admin_panel.php');
 }
 ?>

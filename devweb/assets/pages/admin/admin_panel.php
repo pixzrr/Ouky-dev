@@ -7,6 +7,12 @@
         <a href="../deconnexion.php">Se déconnecter</a>
     </div>
 
+    <?php
+        if(!empty($_SESSION['upload_failed'])){
+            echo '<p>'.$_SESSION['upload_failed'].'</p>';
+        }
+    ?>
+
 
     <table>
         <caption><h3>Liste des inscrits</h3></caption>
@@ -71,7 +77,7 @@
                 <td><?= $r['id'] ?></td>
                 <td><?= $r['nom'] ?></td>
                 <td><?= $r['type'] ?></td>
-                <td><img src="../../images/<?= $r['logo'] ?>"></td>
+                <td><img src="<?= ROOT ?>uploads/<?= $r['logo'] ?>"></td>
                 <td>
                     <form action="content_sup.php" method="post">
                         <input type="hidden" name="id" value="<?= $r['id']?>">
@@ -86,6 +92,7 @@
     </table>
 
     <h3>Ajouter du contenu</h3>
+
     <form action="content_add.php" method="post" enctype="multipart/form-data">
         <select name="type">
             <option selected disabled>Type</option>

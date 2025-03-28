@@ -33,5 +33,6 @@ if(!empty($_POST['username']) && !empty($_POST['password'])){
         }
     }
 } else {
-    echo 'veuillez rensigner tous les champs';
+    $_SESSION['connexion_error'] = "Veuillez renseigner tous les champs du formulaire.";
+    header("location:connexion.php");
 }
