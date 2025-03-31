@@ -1,11 +1,12 @@
 <?php
 session_start();
-if(!empty($_POST['type']) && !empty($_POST['nom']) && !empty($_POST['year']) && !empty($_POST['author']) && !empty($_POST['synopsis']) && !empty($_FILES['logo']['tmp_name'])){
+if(!empty($_POST['type']) && !empty($_POST['nom']) && !empty($_POST['year']) && !empty($_POST['author'])&& !empty($_POST['category']) && !empty($_POST['synopsis']) && !empty($_FILES['logo']['tmp_name'])){
 
     $name = htmlspecialchars($_POST['nom']);
     $type = htmlspecialchars($_POST['type']);
     $year = htmlspecialchars($_POST['year']);
     $author = htmlspecialchars($_POST['author']);
+    $category = htmlspecialchars($_POST['category']);
     $synopsis = htmlspecialchars($_POST['synopsis']);
 
         // Changement du nom du fichier + changement de nom pour éviter les clash
@@ -15,7 +16,7 @@ if(!empty($_POST['type']) && !empty($_POST['nom']) && !empty($_POST['year']) && 
 
         include '../../inc/database.php';
 
-        $sql = "INSERT INTO catalogue (nom, type, year, author, synopsis, logo) VALUES ('$name', '$type', '$year', '$author', '$synopsis', '$new_image');";
+        $sql = "INSERT INTO catalogue (nom, type, year, author, category, synopsis, logo) VALUES ('$name', '$type', '$year', '$author', '$category', '$synopsis', '$new_image');";
 
         if($connexion->query($sql)){
             // on déplace l'image dans le dossier image

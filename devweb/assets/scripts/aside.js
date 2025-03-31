@@ -1,4 +1,6 @@
 let more = document.querySelector('aside');
+let cards = document.querySelectorAll('main section article div img');
+console.log(cards);
 
 // Condition trouvée sur reddit : si la largeur de l'écran est inférieure à 1200px...
 if(screen.width < 1200){
@@ -7,26 +9,20 @@ if(screen.width < 1200){
         more.setAttribute('id', '');
     });
 
-    overflow.addEventListener('click', function(){
+    for (let i = 0 ; i < cards.length ; i++){
+    cards[i].addEventListener('click', function(){
         if(more.getAttribute('id') != 'mobile_aside'){
-            console.log("caca");
             more.setAttribute('id', 'mobile_aside');
         } else {
             more.setAttribute('id', '');
         }
     });
+}
 
 } else {
 
-    view_less.addEventListener('click', function(){
-        more.setAttribute('id', '');
-    });
-
-    view_less.addEventListener('click', function(){
-        more.setAttribute('id', '');
-    });
-
-overflow.addEventListener('click', function(){
+    for (let i = 0 ; i < cards.length ; i++){
+cards[i].addEventListener('click', function(){
     if(more.getAttribute('id') != 'aside'){
         more.setAttribute('id', 'aside');
     } else {
@@ -34,4 +30,5 @@ overflow.addEventListener('click', function(){
     }
 
 });
+    }
 }

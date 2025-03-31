@@ -18,7 +18,7 @@
             <p><?= $l['nom'] ?></p>
 
             <div>
-                <p id="card_genre">thriller</p>
+                <p id="card_genre"><?= $l['category'] ?></p>
                 <!--Catégorie : film ou série?-->
                 <p><?= $l['type'] ?></p>
             </div>

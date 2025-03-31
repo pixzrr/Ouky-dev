@@ -5,7 +5,7 @@
 
             <?php
             if(!empty($_SESSION['connexion_error'])){
-                echo '<p>'.$_SESSION['connexion_error'].'</p>';
+                echo '<p id="message">'.$_SESSION['connexion_error'].'</p>';
             }
             ?>
             
@@ -15,4 +15,6 @@
                 <input type="submit" value="Se connecter">
             </form>
         </main>
-<?php include '../../inc/bottom.php'; ?>
+<?php include '../../inc/bottom.php';
+unset($_SESSION['connexion_error']);
+?>

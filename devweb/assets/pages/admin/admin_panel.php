@@ -9,7 +9,7 @@
 
     <?php
         if(!empty($_SESSION['upload_failed'])){
-            echo '<p>'.$_SESSION['upload_failed'].'</p>';
+            echo '<p id="message">'.$_SESSION['upload_failed'].'</p>';
         }
     ?>
 
@@ -58,6 +58,7 @@
                 <th>ID</th>
                 <th>Nom</th>
                 <th>Type</th>
+                <th>Catégorie</th>
                 <th>Logo</th>
                 <th></th>
             </tr>
@@ -77,6 +78,7 @@
                 <td><?= $r['id'] ?></td>
                 <td><?= $r['nom'] ?></td>
                 <td><?= $r['type'] ?></td>
+                <td><?= $r['category'] ?></td>
                 <td><img src="<?= ROOT ?>uploads/<?= $r['logo'] ?>"></td>
                 <td>
                     <form action="content_sup.php" method="post">
@@ -98,12 +100,12 @@
             <option selected disabled>Type</option>
             <option value="movie">Film</option>
             <option value="serie">Série</option>
-            <option value="anime">Anime</option>
         </select>
 
         <input type="text" name="nom" placeholder="Titre" maxlength="100">
         <input type="text" name="year" placeholder="Année de parution" minlengh="4" maxlength="4">
         <input type="text" name="author" placeholder="Auteur" maxlength="100">
+        <input type="text" name="category" placeholder="Catégorie" maxlength="50">
         <textarea name="synopsis" placeholder="Synopsis" maxlength="2000"></textarea>
 
         <!--id file pour le js-->
@@ -120,4 +122,6 @@
     </form>
 
 </main>
-<?php include '../../inc/bottom.php'; ?>
+<?php include '../../inc/bottom.php';
+unset($_SESSION['upload_failed']);
+?>
