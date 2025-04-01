@@ -632,6 +632,41 @@ main table form input[type='image']{
 
 
 
+/*Page profil*/
+
+main #pfp{
+    background-color: rgb(180, 0, 0);
+    padding: 5em 90% 2em 5%;
+    width: 5%;
+
+    transition: all 1s ease-in-out;
+}
+
+main #profile_table{
+    animation-name: pfp;
+    animation-duration: 2s;
+}
+
+main #profile_table th:first-of-type, th:last-of-type{
+    width: fit-content;
+    margin-top: 50%;
+}
+
+main #profile_table th{
+    padding: 1em 0 1em 0;
+
+    transition: all 0.2s ease-in-out;
+}
+
+main #profile_table th:hover{
+    padding-bottom: 1.5em;
+}
+
+
+
+
+
+
 /*Boutton de déconnexion*/
 
 main .deconnexion{

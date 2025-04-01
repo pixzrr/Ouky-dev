@@ -11,5 +11,6 @@
                 <p id="copy">&copy Copyright 2025 - Ouky</p>
         </footer>
         <script type="text/JavaScript" src="<?= ROOT ?>assets/scripts/burger.js"></script>
+        <script type="text/JavaScript" src="<?= ROOT ?>assets/scripts/aside.js"></script>
     </body>
 </html>
