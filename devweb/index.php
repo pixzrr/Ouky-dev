@@ -9,7 +9,10 @@ include 'assets/inc/top.php'; ?>
         </section>
     </article>
 
-    <?php echo "<h2>Bienvenue ".$_SESSION['user']."</h2>"; ?>
+    <?php 
+        if(!empty($_SESSION['user'])){
+            echo "<h2>Bienvenue ".$_SESSION['user']."</h2>";
+        } ?>
     
     <section>
         <!--Modèle de carte de film / série-->

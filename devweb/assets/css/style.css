@@ -654,12 +654,13 @@ main #profile_table th:first-of-type, th:last-of-type{
 
 main #profile_table th{
     padding: 1em 0 1em 0;
+    cursor: pointer;
 
     transition: all 0.2s ease-in-out;
 }
 
-main #profile_table th:hover{
-    padding-bottom: 1.5em;
+main #profile_table th img{
+    width: 2em;
 }
 
 

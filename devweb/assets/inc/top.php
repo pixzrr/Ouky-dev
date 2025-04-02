@@ -95,7 +95,7 @@ define("ROOT", "/devweb/");
                         <p>Profil</p>
                     </article>
                 </a>
-                <a href="<?= ROOT ?>assets/pages/tous/films.php">
+                <a href="<?= ROOT ?>assets/pages/user/pour_vous.php">
                     <article>
                         <img src="<?= ROOT ?>assets/images/clapperboard.png" alt="voir tous les films">
                         <p>Pour vous</p>
