@@ -704,21 +704,24 @@ main .deconnexion a:hover{
 
 aside{
     width: 30em;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.744);
+    height: 90%;
+    background-color: rgba(25, 25, 25, 0.75);
     backdrop-filter: blur(10px); /*Flou du bg*/
+    border-radius: 2em 0 0 2em;
     position:fixed;
-    top:4em;
+    top:4.5em;
     right:0;
     z-index: 5;
     margin-right: -30em;
+    display: flex;
+
 
     transition: all 0.5s ease-in-out;
 }
 
 aside #view_less{
-    height: 2em;
-    width: 10%;
+    height: 100%;
+    width: 5%;
     object-fit:none;
     cursor: pointer;
 }
@@ -727,9 +730,12 @@ aside #view_less{
     margin-right: 0;
 }
 
+aside section{
+    width: 90%;
+}
+
 aside img{
-    width : 90%;
-    margin:3%
+    width: 100%;
 }
 
 aside p,h2{

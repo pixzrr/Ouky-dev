@@ -1,7 +1,7 @@
 <?php include '../../inc/top.php';
-    $sql = 'SELECT * FROM user WHERE username="'.$_SESSION['user'].'";';
+    $sql_filtre = 'SELECT * FROM catalogue WHERE type="movie";';
     include '../../inc/database.php';
-    $infos = $connexion->query($sql);
+    $films = $connexion->query($sql_filtre);
 ?>
 <main>
 
@@ -20,34 +20,46 @@
         <tbody>
             <td colspan="4">
             <section>
-                <!--Modèle de carte de film / série-->
-                <article>
-                    <div id="overflow">
-                    <img src="../../images/carrousel/img-2.jpg" alt="jsp mais faut remplir">
-                    </div>
-        
-                    <p>2025</p>
-                    <!--Police spéciale à prévoir pour le titre-->
-                    <p id="card_title">Titre</p>
-                    <!--Jsp si on met le genre (drame, thriller, etc) ou la note du film ou de la série-->
+
+
+            <?php
+        foreach($films AS $f):
+        ?>
+            <article>
+        <div id="overflow">
+            <img src="../../../uploads/<?= $f['logo'] ?>" alt="<?= $f['nom'] ?>">
+            </div>
+            <p><?= $f['year'] ?></p>
+            <p><?= $f['nom'] ?></p>
+
                     <div>
-                        <p id="card_genre">thriller</p>
-                        <!--Catégorie : film ou série?-->
-                        <p>serie</p>
+                    <p id="card_genre"><?= $f['category'] ?></p>
+                    <!--Catégorie : film ou série?-->
+                    <p><?= $f['type'] ?></p>
                     </div>
-                </article>
-            </section>
-</td>
+                    </div>
+                    </article>
+                    <?php endforeach; ?>
+
+
+
+
+
+                </section>
+            </td>
         </tbody>
 
     </table>
 
 </main>
 <aside id="">
-    <img id="view_less" src="../../images/x.png" alt="obligatoire">
+    <img id="view_less" src="../../images/chevron-left.png" alt="obligatoire">
+
+    <section>
     <img src="../../images/suzume.jpeg" alt="obligatoire">
 
     <h2 id="titre">TITRE<h2>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae placeat architecto, sequi eligendi itaque exercitationem aperiam nulla doloribus cupiditate nisi ut non quae, saepe, consectetur dolorum! Placeat repellendus culpa hic?</p>
+    </section>
 </aside>
 <?php include '../../inc/bottom.php'; ?> 

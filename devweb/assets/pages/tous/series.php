@@ -10,7 +10,7 @@
         foreach($serie AS $s):
         ?>
 
-        <article>
+        <article id="s<?= $s['id']; ?>">
         <div id="overflow">
             <img src="../../../uploads/<?= $s['logo'] ?>" alt="<?= $s['nom'] ?>">
             </div>
@@ -27,6 +27,7 @@
 </section>
 </main>
 <aside id="">
+
     <img id="view_less" src="../../images/x.png" alt="obligatoire">
     <img src="../../images/suzume.jpeg" alt="obligatoire">
 
